@@ -1,0 +1,19 @@
+<div class="hjednicka">
+  <h1>{{categories.category.name}}</h1>
+</div>
+
+<div class="container" style="">
+
+<div class="card"  *ngFor="let product of prdct" (click) = "getLink(product.id)" style="">
+  <img class="card-img-top" [src]="'http://kodytek.cz:8080/rest-api/' + product.images[0].miniaturePath" alt="Card image cap">
+  <div class="card-body" *ngFor="let product of prdct | paginate: {itemsPerPage: 1, currentPage: p}; let i = index">
+    <h5 class="card-title">{{product.title}}</h5>
+    <h5 class="card-title">{{product.price / 100 + "Kč"}}</h5>
+   <!-- <h5 class="card-title">{{product.description}}</h5> -->
+    <!--<a routerLink="/products" (click) = "getLink(product.id)" class="btn btn-primary">Přejít</a>-->
+  </div>
+</div>
+
+</div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

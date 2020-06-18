@@ -1,0 +1,15 @@
+<div class="container" >
+  <div class="d-flex flex-row flex-wrap container">
+
+  <div class="card my-3 mx-3"  style="width: 18rem;" *ngFor="let product of arr" >
+    <img class="card-img-top" [src]="'http://kodytek.cz:8080/rest-api/' + product.images[0].miniaturePath" alt="Card image cap">
+      <h5 class="card-title">{{product.title}}</h5>
+      <h5 class="card-title">{{product.price / 100 + "Kč"}}</h5>
+      <button  (click) = "getLink(product.id)" class="btn btn-primary">Zobrazit</button>
+
+  </div>
+  </div>
+</div>
+<div class="container" style="float: right">
+  <h2>Celková cena: {{price / 100}} Kč</h2>
+</div>

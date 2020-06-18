@@ -1,0 +1,18 @@
+
+
+
+  <h1>{{product.title}}</h1>
+  <!--<a id="details">{{product.parameters}}</a>-->
+  <a id="r8"></a>
+  <img class="pic" [src]="'http://kodytek.cz:8080/rest-api/' + product.images[0].miniaturePath" alt="Card image cap">
+  <div class="container">
+    <div style="float: right">
+      <button class="btn btn-primary" (click)="addToCart(product.id)">add to cart</button>
+
+    </div>
+  <a id="popis" style="">{{product.description}}</a>
+  </div>
+
+
+
+
